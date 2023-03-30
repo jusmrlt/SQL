@@ -1,0 +1,32 @@
+In this SQL I'm querying a restaurant store database with 15 dinner menu items.
+
+First, I'm goinng to make a table.
+
+CREATE TABLE dinner_menu (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, sale_perday INTEGER, wasted_perday INTEGER);
+
+Second, I will INSERT items one by one with the price, sales per day, and wastes per day.
+
+INSERT INTO dinner_menu VALUES (1, 'Beef Steak', 20.99, 23, 1);
+INSERT INTO dinner_menu VALUES (2, 'Pork with Rice', 16.99, 24, 3);
+INSERT INTO dinner_menu VALUES (3, 'Wagyu Steak', 34.99, 30, 5);
+INSERT INTO dinner_menu VALUES (4, 'Hunan Kung Pao Chicken', 20.99, 38, 9);
+INSERT INTO dinner_menu VALUES (5, 'Cajun Chicen Sandwich', 16.99, 40, 8);
+INSERT INTO dinner_menu VALUES (6, 'Steak with Sushi', 36.99, 20, 6);
+INSERT INTO dinner_menu VALUES (7, 'Fish Fillet', 19.99, 25, 6);
+INSERT INTO dinner_menu VALUES (8, 'Wings', 16.99, 42, 7);
+INSERT INTO dinner_menu VALUES (9, 'Buffalo Cauliflower', 14.99, 24, 3);
+INSERT INTO dinner_menu VALUES (10, 'Fish Tacos', 14.99, 51, 5);
+INSERT INTO dinner_menu VALUES (11, 'Fillet Mignon', 29.99, 44, 6);
+INSERT INTO dinner_menu VALUES (12, 'Cajun Chicken', 29.99, 60, 1);
+INSERT INTO dinner_menu VALUES (13, 'Smoked Salmon', 26.99, 57, 2);
+INSERT INTO dinner_menu VALUES (14, 'Pasta Alfrdeo', 23.99, 55, 3);
+INSERT INTO dinner_menu VALUES (15, 'Pizza Margherita', 23.99, 53, 4);
+
+After I INSERT all of the items into the table, I will need to display the database ordered by price.
+
+SELECT *FROM dinner_menu;
+SELECT *FROM dinner_menu WHERE price >=14.99 
+ORDER BY price asc;
+
+As I succesfully ordered by price, I will be collecting my SUM price for each items.
+SELECT SUM(price) FROM dinner_menu
